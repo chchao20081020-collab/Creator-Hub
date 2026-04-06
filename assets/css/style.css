@@ -452,3 +452,30 @@ body {
 .member-social a:hover {
     color: #fff;
 }
+.content h1 {
+    font-size: 4.5rem;
+    background: linear-gradient(to right, #00f7ff, var(--neon-blue), #00f7ff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* 文字變透明以顯示漸層 */
+    
+    /* 漸層移動動畫 + 呼吸縮放 */
+    animation: shine 3s linear infinite, pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes shine {
+    to { background-position: 200% center; }
+}
+
+@keyframes pulse {
+    from { transform: scale(1); filter: drop-shadow(0 0 5px var(--neon-purple)); }
+    to { transform: scale(1.02); filter: drop-shadow(0 0 20px var(--neon-blue)); }
+}
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 2.5rem; /* 手機版字體縮小 */
+    }
+    .content p {
+        font-size: 1.1rem;
+    }
+}
